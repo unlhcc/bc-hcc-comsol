@@ -5,6 +5,11 @@ subcategory: GUIs
 role: batch_connect
 description: |
   This app will launch the [COMSOL Multiphysics] GUI.  You will be able
-  to interact with the COMSOL GUI through a VNC session.
+  to interact with the COMSOL GUI through your web browser.
+
+  **Note**:  **You must supply a valid license server address to use.**
+  COMSOL is not licensed for site-wide usage. Your license server must also
+  [allow connections from HCC resources](https://hcc.unl.edu/docs/faq/#what-ip-s-do-i-use-to-allow-connections-to-from-hcc-resources). If you need help with this, contact
+  hcc-support@unl.edu.
 
   [COMSOL Multiphysics]: https://www.comsol.com
