@@ -1,11 +1,13 @@
 #!/bin/bash
 <%
-if context.use_ckl=="1"
-then
-  addl_args="-ckl"
-else
+  if context.use_ckl=="1"
+  then
+    addl_args="-ckl"
+  else
   addl_args=""
-end
+  end
+
+ license_server_string=context.license_server_port.to_s + '@' + context.license_server_address.to_s
 %>
 
 # init lmod within container
@@ -58,6 +60,8 @@ wmctrl -r COMSOL -b add,maximized_vert,maximized_horz
 #
 
 # Load the required environment
+export FLEXLM_DIAGNOSTICS=3
+export LMCOMSOL_LICENSE_FILE=<%= license_server_string %>
 module load <%= context.comsol_version %>
 
 # Launch COMSOL
