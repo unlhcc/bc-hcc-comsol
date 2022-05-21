@@ -4,10 +4,19 @@
   then
     addl_args="-ckl"
   else
-  addl_args=""
+    addl_args=""
   end
 
+# Only set the env var if a license server is supplied.
+# Otherwise just load the module. Lmod should load a per-group module
+# preferentially if one is present.
  license_server_string=context.license_server_port.to_s + '@' + context.license_server_address.to_s
+ if license_server_string.blank?
+  lm_string=""
+ else
+  lm_string="export LMCOMSOL_LICENSE_FILE=" + license_server_string
+ end
+
 %>
 
 # init lmod within container
@@ -61,7 +70,7 @@ wmctrl -r COMSOL -b add,maximized_vert,maximized_horz
 
 # Load the required environment
 export FLEXLM_DIAGNOSTICS=3
-export LMCOMSOL_LICENSE_FILE=<%= license_server_string %>
+<%= lm_string %>
 module load <%= context.comsol_version %>
 
 # Launch COMSOL
