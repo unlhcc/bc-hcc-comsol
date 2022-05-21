@@ -8,7 +8,7 @@ description: |
   to interact with the COMSOL GUI through your web browser.
 
   **Note**:  **COMSOL is not licensed for site-wide usage**
-  You must either have pre-existing access or supply a valid license server address to use.
+  You must either have pre-existing access **or** supply a valid license server address to use.
   If supplying a license server, it must
   [allow connections from HCC resources](https://hcc.unl.edu/docs/faq/#what-ip-s-do-i-use-to-allow-connections-to-from-hcc-resources). If you need help with this, contact
   hcc-support@unl.edu.
