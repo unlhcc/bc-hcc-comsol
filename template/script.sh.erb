@@ -11,7 +11,7 @@
 # Otherwise just load the module. Lmod should load a per-group module
 # preferentially if one is present.
  license_server_string=context.license_server_port.to_s + '@' + context.license_server_address.to_s
- if license_server_string.blank?
+ if context.license_server_address.to_s.blank?
   lm_string=""
  else
   lm_string="export LMCOMSOL_LICENSE_FILE=" + license_server_string

@@ -83,29 +83,29 @@ e
   use_ckl: 
     widget: check_box
     label: "Use CKL?"
-    help: "Check this box to use the Class Kit License"
+    help: "Check this box to use the Class Kit License (your license must support it)"
   license_server_address:
     widget: text_field
     placeholder: "myserver.unl.edu"
     pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$
-    label: "License server address (required)"
-    help: "Enter the COMSOL license server address (hostname or IP)."
+    label: "License server address"
+    help: "Enter the COMSOL license server address (hostname or IP). If you are unsure, leave this blank."
   license_server_port:
     widget: number_field
     step: 1
     value: 1719
-    label: "License server port (required)"
-    help: "Enter the COMSOL license server port number (default 1719)."
+    label: "License server port"
+    help: "Enter the COMSOL license server port number (default 1719). If you are unsure, leave this blank."
 
 form:
-  - license_server_address
-  - license_server_port
   - comsol_version
   - use_ckl
   - desktop
   - bc_vnc_idle
   - bc_vnc_resolution
   - bc_num_slots
+  - license_server_address
+  - license_server_port
   - bc_num_cores
   - bc_num_hours
   - bc_memory
